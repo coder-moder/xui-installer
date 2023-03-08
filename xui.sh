@@ -28,12 +28,12 @@ install(){
 
     # install certbot
     echo "\n$HC+$NC Installing certbot..."
-    apt update 2>> 2.log 1>> 1.log
-    apt install snapd -y 2>> 2.log 1>> 1.log
-    snap install core 2>> 2.log 1>> 1.log
-    snap refresh core 2>> 2.log 1>> 1.log
-    snap install --classic certbot 2>> 2.log 1>> 1.log
-    ln -s /snap/bin/certbot /usr/bin/certbot 2>> 2.log 1>> 1.log
+    apt update 
+    apt install snapd -y 
+    snap install core 
+    snap refresh core 
+    snap install --classic certbot 
+    ln -s /snap/bin/certbot /usr/bin/certbot 
 
     echo "\n$HC+$NC Issueing certificate for $MYDOMAIN"
     certbot certonly --standalone -d $MYDOMAIN --register-unsafely-without-email --non-interactive --agree-tos 2>> 2.log 1>> 1.log
