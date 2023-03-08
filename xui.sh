@@ -59,7 +59,7 @@ install(){
 
     echo -e "\n\n"
     echo -e "\n$HC+$NC x-ui has been installed."
-    echo "Panel's URL: https://$MYDOMAIN:$PORT" > panel.txt
+    echo "Panel's URL: http://$MYDOMAIN:$PORT" > panel.txt
     echo "Panel's username: $USERNAME" >> panel.txt
     echo "Panel's password: $PASSWORD" >> panel.txt
     echo "cert path: /etc/letsencrypt/live/$MYDOMAIN/fullchain.pem" >> panel.txt
