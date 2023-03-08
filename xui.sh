@@ -27,7 +27,7 @@ install(){
     chkdomain $MYDOMAIN
 
     # install certbot
-    echo "\n$HC+$NC Installing certbot..."
+    echo -e "\n$HC+$NC Installing certbot..."
     apt update 
     apt install snapd -y 
     snap install core 
@@ -35,10 +35,10 @@ install(){
     snap install --classic certbot 
     ln -s /snap/bin/certbot /usr/bin/certbot 
 
-    echo "\n$HC+$NC Issueing certificate for $MYDOMAIN"
+    echo -e "\n$HC+$NC Issueing certificate for $MYDOMAIN"
     certbot certonly --standalone -d $MYDOMAIN --register-unsafely-without-email --non-interactive --agree-tos 2>> 2.log 1>> 1.log
 
-    echo "\n$HC+$NC installing x-ui..."
+    echo -e "\n$HC+$NC installing x-ui..."
 
     read -p "Username: " USERNAME
 
@@ -57,8 +57,8 @@ install(){
     " | ./install_en.sh 2>> 2.log 1>> 1.log
 
 
-    echo "\n\n"
-    echo "x-ui installed successfully."
+    echo -e "\n\n"
+    echo -e "\n$HC+$NC x-ui has been installed."
     echo "Panel's URL: https://$MYDOMAIN:$PORT" > panel.txt
     echo "Panel's username: $USERNAME" >> panel.txt
     echo "Panel's password: $PASSWORD" >> panel.txt
